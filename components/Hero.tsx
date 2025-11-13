@@ -2,7 +2,11 @@ import React from 'react';
 import { MapPin, Link as LinkIcon, Calendar, MoreHorizontal, Github, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
-const Hero = () => {
+interface HeroProps {
+  onNavigate: (section: string) => void;
+}
+
+const Hero = ({ onNavigate }: HeroProps) => {
   return (
     <div className="flex flex-col md:flex-row gap-6 items-start pt-4">
       {/* Avatar Section */}
@@ -27,10 +31,13 @@ const Hero = () => {
             <p className="text-gray-500 dark:text-gray-400 font-medium text-lg">@mukesh003</p>
           </div>
           <div className="flex items-center gap-2">
-            <a href={`mailto:${SOCIAL_LINKS.email}`} className="inline-flex items-center px-4 py-1.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
+            <button 
+              onClick={() => onNavigate('contact')}
+              className="inline-flex items-center px-4 py-1.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+            >
                <Mail className="w-4 h-4 mr-2" />
                Contact
-            </a>
+            </button>
             <button className="inline-flex items-center px-3 py-1.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
               <MoreHorizontal className="w-4 h-4" />
             </button>

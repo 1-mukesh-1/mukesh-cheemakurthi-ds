@@ -5,7 +5,7 @@ export const SOCIAL_LINKS = {
   github: "https://github.com/1-mukesh-1",
   email: "cheemakurthi.m@northeastern.edu",
   portfolio: "#",
-  phone: "+1 (716) 418 9488"
+  phone: "+1 716-418-9488"
 };
 
 export const EDUCATION: Education = {
@@ -109,7 +109,7 @@ Be professional, concise, and enthusiastic about his work in Data Science, AI, a
 
 Context:
 Name: Mukesh Cheemakurthi
-Phone: +1 (716) 418 9488
+Phone: +1 716-418-9488
 Email: cheemakurthi.m@northeastern.edu
 Availability: May 2025 to Dec 2025
 

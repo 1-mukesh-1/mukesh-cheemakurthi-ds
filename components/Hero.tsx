@@ -13,7 +13,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
       <div className="relative group">
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg bg-gray-100 dark:bg-gray-800 transition-colors">
           <img 
-            src="https://api.dicebear.com/9.x/avataaars/svg?seed=Mukesh&backgroundColor=ffdfbf" 
+            src="https://api.dicebear.com/9.x/fun-emoji/svg?seed=Jade" 
             alt="Mukesh Cheemakurthi" 
             className="w-full h-full object-cover"
           />

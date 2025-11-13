@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     title: "Neuralis: Personalized Multi-Agent AI Ecosystem",
     tech: "Langchain, React, Stateful AI",
     period: "Feb 2025",
-    category: 'AI',
+    category: 'AI Agents',
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800", // Digital Brain / AI Network
     points: [
       "Designed multi-agent AI system managing workflows with 5+ specialized agents including calendar and emails.",
@@ -79,8 +79,8 @@ export const PROJECTS: Project[] = [
     title: "Warehouse SLIM Optimisation",
     tech: "Python, Blender 3D, Genetic Algorithm",
     period: "Jan 2025 - Apr 2025",
-    category: 'Data',
-    link: "#",
+    category: 'Algorithms & AI',
+    link: "https://github.com/WarehouseManagementProject/InventoryManagement",
     image: "https://private-user-images.githubusercontent.com/51417684/434831528-fe6a5b9c-9cd8-40f9-bbf0-d40fa47ac37b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjMwMTU2NDUsIm5iZiI6MTc2MzAxNTM0NSwicGF0aCI6Ii81MTQxNzY4NC80MzQ4MzE1MjgtZmU2YTViOWMtOWNkOC00MGY5LWJiZjAtZDQwZmE0N2FjMzdiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTEzVDA2MjkwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZhNjlmZjBmNWZmZWIzMWEzNWNhN2FiOWU3OWY5MDBkZTBjYzkxOWU2YTdlYTY3ZTY3NmJjNDg2ZGYxYzdjMDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XJOKaoVtqusEhGYYm1i8rdAKLfEcWpG9jxR7giSbBSo", // Warehouse / Logistics / Boxes
     points: [
       "Developed evolutionary algorithm to optimize warehouse space layout, reducing storage costs.",
@@ -92,8 +92,8 @@ export const PROJECTS: Project[] = [
     title: "T-shirt Size Estimator",
     tech: "CNN, Depth Estimation, Segmentation",
     period: "Sep 2024 - Dec 2024",
-    category: 'AI',
-    link: "#",
+    category: 'Computer Vision',
+    link: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator",
     image: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator/blob/main/all_images/vis/geo/all_transformations.png?raw=true", // Computer Vision / Code / Analysis
     points: [
       "Built ML pipeline with 89% accuracy using deep learning to automate body measures of mono images.",

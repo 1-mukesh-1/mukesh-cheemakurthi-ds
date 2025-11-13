@@ -58,7 +58,16 @@ function App() {
     
     if (activeSection === sectionName) {
       // Active state: high z-index to sit above overlay, scaled up
-      return `${baseStyle} scale-105 z-50 shadow-2xl ring-2 ring-yellow-400 rounded-xl opacity-100 bg-white dark:bg-gray-900 relative`;
+      let activeClasses = `${baseStyle} scale-105 z-50 shadow-2xl ring-2 ring-yellow-400 rounded-xl opacity-100 bg-white dark:bg-gray-900 relative`;
+      
+      // Add padding to main sections so text doesn't touch the edges of the pop-out card
+      // Skills and Contact are already "cards" so they don't need extra padding to frame them, 
+      // but Projects and Experience are sections that become cards when focused.
+      if (['projects', 'experience', 'about'].includes(sectionName)) {
+        activeClasses += ' p-6 md:p-8';
+      }
+      
+      return activeClasses;
     }
     
     // Inactive state: blur and push back

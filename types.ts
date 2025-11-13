@@ -4,7 +4,7 @@ export interface Project {
   period: string;
   points: string[];
   link?: string;
-  category: 'AI' | 'Data' | 'DevOps';
+  category: string;
   image?: string;
 }
 

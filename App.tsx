@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -8,67 +8,106 @@ import GeminiChat from './components/GeminiChat';
 import Footer from './components/Footer';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'projects' | 'experience'>('projects');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  // Handle Dark Mode Class
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
+  const handleNavigate = (section: string) => {
+    setActiveSection(section === activeSection ? null : section);
+    // Optional: scroll to section if needed, but the pop-out effect is visual enough
+    if (section !== activeSection) {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  };
+
+  // Helper to generate classes for the focus effect
+  const getSectionStyle = (sectionName: string) => {
+    const baseStyle = "transition-focus duration-500 ease-in-out transform origin-center";
+    
+    if (!activeSection) return `${baseStyle} scale-100 opacity-100`;
+    
+    if (activeSection === sectionName) {
+      return `${baseStyle} scale-105 z-20 shadow-2xl ring-2 ring-yellow-400 rounded-xl opacity-100 bg-white dark:bg-gray-900`;
+    }
+    
+    return `${baseStyle} scale-95 opacity-40 blur-[2px] grayscale pointer-events-none`;
+  };
 
   return (
-    <div className="min-h-screen bg-[#f9f9f9] text-gray-800">
-      <Header />
+    <div className="min-h-screen bg-[#f9f9f9] dark:bg-gray-950 transition-colors duration-300">
+      <Header 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+        onNavigate={handleNavigate}
+        activeSection={activeSection}
+      />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Top Profile Header (Avatar & Bio) */}
-        <Hero />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
-          {/* Left Sidebar (Metadata, Skills, Contact) */}
-          <div className="lg:col-span-4 xl:col-span-3 space-y-6">
-             <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-                <h3 className="font-bold text-gray-600 mb-3 uppercase text-xs tracking-wider">About</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+      {/* Overlay to dismiss focus when clicking background */}
+      {activeSection && (
+        <div 
+          className="fixed inset-0 bg-black/10 dark:bg-black/40 z-10 backdrop-blur-[1px] transition-opacity duration-500"
+          onClick={() => setActiveSection(null)}
+        />
+      )}
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+        {/* Top Profile Header (Avatar & Bio) - Treated as 'about' */}
+        <div id="about" className={getSectionStyle('about')}>
+          <div className="p-2">
+             <Hero />
+             {/* Moving the "About" text block inside Hero container for the focus effect */}
+             <div className="mt-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm">
+                <h3 className="font-bold text-gray-600 dark:text-gray-400 mb-3 uppercase text-xs tracking-wider">About Me</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                   Data Scientist & Engineer passionate about AI Agents, Large Language Models, and Data Pipelines. 
                   Currently optimizing EEG analysis at Northeastern University.
                 </p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                   <h3 className="font-bold text-gray-600 mb-3 uppercase text-xs tracking-wider">Education</h3>
+                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+                   <h3 className="font-bold text-gray-600 dark:text-gray-400 mb-3 uppercase text-xs tracking-wider">Education</h3>
                    <div className="text-sm">
-                      <div className="font-semibold">Northeastern University</div>
-                      <div className="text-gray-500 text-xs">MS in Computer Science</div>
+                      <div className="font-semibold text-gray-900 dark:text-gray-100">Northeastern University</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs">MS in Computer Science</div>
                    </div>
                 </div>
              </div>
+          </div>
+        </div>
 
-             <Skills />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+          {/* Left Sidebar */}
+          <div className="lg:col-span-4 xl:col-span-3 space-y-6">
+             {/* Skills Section */}
+             <div id="skills" className={getSectionStyle('skills')}>
+                <Skills />
+             </div>
           </div>
 
           {/* Main Content Area */}
-          <div className="lg:col-span-8 xl:col-span-9">
-            {/* Tabs */}
-            <div className="flex items-center space-x-6 border-b border-gray-200 mb-6">
-              <button 
-                onClick={() => setActiveTab('projects')}
-                className={`pb-3 text-sm font-medium border-b-2 transition-colors ${
-                  activeTab === 'projects' 
-                    ? 'border-yellow-400 text-gray-900' 
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                Projects & Spaces
-              </button>
-              <button 
-                 onClick={() => setActiveTab('experience')}
-                 className={`pb-3 text-sm font-medium border-b-2 transition-colors ${
-                  activeTab === 'experience' 
-                    ? 'border-yellow-400 text-gray-900' 
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                Experience & History
-              </button>
+          <div className="lg:col-span-8 xl:col-span-9 space-y-8">
+            {/* Projects Section */}
+            <div id="projects" className={getSectionStyle('projects')}>
+              <Projects />
             </div>
 
-            {/* Tab Content */}
-            <div className="min-h-[500px]">
-              {activeTab === 'projects' && <Projects />}
-              {activeTab === 'experience' && <Experience />}
+            {/* Experience Section */}
+            <div id="experience" className={getSectionStyle('experience')}>
+              <Experience />
             </div>
           </div>
         </div>

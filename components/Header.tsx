@@ -1,90 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import { SOCIAL_LINKS } from '../constants';
+import React from 'react';
+import { Search, Menu, Smile } from 'lucide-react';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-  ];
-
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <a href="#" className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              MUKESH.C
-            </a>
-          </div>
+    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="flex items-center gap-8">
+          <a href="#" className="flex items-center gap-2">
+            <div className="text-2xl">🤗</div>
+            <span className="font-bold text-lg tracking-tight hidden sm:block">Hugging Folio</span>
+          </a>
           
-          {/* Desktop Nav */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-slate-300 hover:text-cyan-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+            <a href="#" className="hover:text-black transition-colors">Models</a>
+            <a href="#" className="hover:text-black transition-colors">Datasets</a>
+            <a href="#" className="hover:text-black transition-colors">Spaces</a>
+            <a href="#" className="hover:text-black transition-colors">Posts</a>
+            <a href="#" className="hover:text-black transition-colors">Docs</a>
+          </nav>
+        </div>
+
+        <div className="flex items-center gap-4 flex-1 max-w-md ml-8">
+          <div className="relative flex-1 hidden sm:block">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-4 w-4 text-gray-400" />
             </div>
+            <input
+              type="text"
+              className="block w-full pl-10 pr-3 py-1.5 border border-gray-300 rounded-full leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 focus:border-transparent sm:text-sm"
+              placeholder="Search models, datasets, users..."
+            />
           </div>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
-            <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-slate-400 hover:text-white transition-colors"><Mail size={20} /></a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-300 hover:text-white p-2"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+          <div className="flex items-center gap-3">
+             <button className="md:hidden p-2 text-gray-500">
+                <Menu className="w-6 h-6" />
+             </button>
+             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center text-white font-bold border border-yellow-600/20 shadow-inner">
+                M
+             </div>
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-b border-slate-800">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-slate-300 hover:text-cyan-400 block px-3 py-2 rounded-md text-base font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
     </header>
   );
 };

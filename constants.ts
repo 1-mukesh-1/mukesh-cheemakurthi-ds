@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
     period: "Sep 2024 - Dec 2024",
     category: 'AI',
     link: "#",
-    image: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator/blob/main/all_images/vis/geo/all_transformations.png", // Computer Vision / Code / Analysis
+    image: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator/blob/main/all_images/vis/geo/all_transformations.png?raw=true", // Computer Vision / Code / Analysis
     points: [
       "Built ML pipeline with 89% accuracy using deep learning to automate body measures of mono images.",
       "Incorporated geometric algorithms to improve accuracy from 33% to 80% versus baseline models.",

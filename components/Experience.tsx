@@ -1,53 +1,61 @@
 import React from 'react';
+import { Building2, Calendar, ChevronRight } from 'lucide-react';
 import { EXPERIENCE } from '../constants';
-import { Briefcase } from 'lucide-react';
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-slate-900/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Work Experience</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"></div>
-        </div>
-
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-800 transform -translate-x-1/2 md:translate-x-0"></div>
-
-          <div className="space-y-12">
-            {EXPERIENCE.map((job, index) => (
-              <div key={index} className={`relative flex items-start md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 border-2 border-cyan-500 z-10">
-                  <Briefcase className="h-4 w-4 text-cyan-500" />
-                </div>
-
-                {/* Content Spacer for Desktop */}
-                <div className="hidden md:block w-1/2" />
-
-                {/* Content Card */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
-                  <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-cyan-500/30 transition-colors shadow-lg">
-                    <h3 className="text-xl font-bold text-white">{job.role}</h3>
-                    <h4 className="text-cyan-400 font-medium mb-2">{job.company}</h4>
-                    <p className="text-slate-500 text-sm mb-4">{job.period} | {job.location}</p>
-                    <ul className={`space-y-2 text-slate-300 text-sm ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
-                      {job.points.map((point, idx) => (
-                        <li key={idx} className="leading-relaxed">
-                          • {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <div>
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+          Organizations & Work
+        </h2>
       </div>
-    </section>
+
+      <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+        {EXPERIENCE.map((job, index) => (
+          <div 
+            key={index} 
+            className={`p-5 hover:bg-gray-50 transition-colors group cursor-pointer ${
+              index !== EXPERIENCE.length - 1 ? 'border-b border-gray-100' : ''
+            }`}
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center flex-shrink-0">
+                 <Building2 className="w-6 h-6 text-gray-400" />
+              </div>
+              
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-1">
+                    <h3 className="font-bold text-gray-900 truncate pr-4 group-hover:text-blue-600 transition-colors">
+                        {job.company}
+                    </h3>
+                    <span className="text-xs font-mono text-gray-500 whitespace-nowrap bg-gray-100 px-2 py-0.5 rounded">
+                        {job.period}
+                    </span>
+                </div>
+                
+                <div className="text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                    {job.role}
+                    <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                    <span className="text-gray-500 font-normal text-xs">{job.location}</span>
+                </div>
+
+                <ul className="space-y-1.5">
+                    {job.points.map((point, i) => (
+                        <li key={i} className="text-sm text-gray-600 flex items-start gap-2 leading-relaxed">
+                            <span className="block w-1 h-1 rounded-full bg-gray-400 mt-2 flex-shrink-0"></span>
+                            {point}
+                        </li>
+                    ))}
+                </ul>
+              </div>
+              
+              <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-gray-400 self-center" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

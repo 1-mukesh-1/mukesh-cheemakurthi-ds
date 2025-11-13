@@ -1,70 +1,99 @@
 import React from 'react';
+import { Heart, Eye, Layout, Box, Cpu, Maximize2 } from 'lucide-react';
 import { PROJECTS } from '../constants';
-import { ExternalLink, Github } from 'lucide-react';
+
+const ProjectCard = ({ project, index }: { project: any; index: number }) => {
+  // Assign random aesthetic icons based on category
+  const getIcon = (category: string) => {
+    if (category === 'AI') return <Cpu className="w-4 h-4" />;
+    if (category === 'Data') return <Layout className="w-4 h-4" />;
+    return <Box className="w-4 h-4" />;
+  };
+
+  // Random stats for visual flair
+  const likes = 40 + (index * 15);
+  const views = 1200 + (index * 340);
+  
+  return (
+    <div className="group bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-300 transition-all duration-200 hover:shadow-md flex flex-col h-full">
+      <div className="flex items-start justify-between mb-3">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 flex items-center justify-center text-xl shadow-sm">
+            {index === 0 ? '🧠' : index === 1 ? '📦' : '👕'}
+          </div>
+          <div>
+            <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
+              {project.title}
+            </h3>
+            <p className="text-xs text-gray-500 mt-0.5">{project.category} • Updated recently</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Image Preview for Spaces look */}
+      {project.image && (
+        <div className="w-full h-32 mb-4 rounded-lg overflow-hidden border border-gray-100 bg-gray-50 relative">
+           <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" />
+           <div className="absolute top-2 right-2 bg-black/50 text-white text-[10px] px-1.5 py-0.5 rounded backdrop-blur-sm font-mono">
+              SPACE
+           </div>
+        </div>
+      )}
+
+      <div className="space-y-2 mb-4 flex-1">
+        {project.points.slice(0, 2).map((point: string, idx: number) => (
+          <p key={idx} className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
+            {point}
+          </p>
+        ))}
+      </div>
+
+      <div className="flex items-center justify-between pt-4 border-t border-gray-50 mt-auto">
+        <div className="flex items-center gap-2">
+           <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-md border border-gray-200 font-mono truncate max-w-[150px]">
+             {project.tech.split(',')[0]}
+           </span>
+        </div>
+        <div className="flex items-center gap-3 text-xs text-gray-500 font-medium">
+          <div className="flex items-center gap-1 hover:text-red-500 cursor-pointer transition-colors">
+            <Heart className="w-3.5 h-3.5" />
+            {likes}
+          </div>
+          <div className="flex items-center gap-1">
+            <Eye className="w-3.5 h-3.5" />
+            {(views / 1000).toFixed(1)}k
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-slate-900/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-2">Featured Projects</h2>
-            <p className="text-slate-400">Innovation in AI Agents and Optimization</p>
-          </div>
-          <a href="#" className="hidden md:flex items-center text-cyan-400 hover:text-cyan-300 font-medium mt-4 md:mt-0">
-            View GitHub <Github className="ml-2 h-4 w-4" />
-          </a>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {PROJECTS.map((project, index) => (
-            <div key={index} className="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-900/20 flex flex-col">
-              {/* Image Container */}
-              <div className="h-48 w-full overflow-hidden relative">
-                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-all z-10" />
-                <img 
-                  src={project.image || `https://picsum.photos/seed/${index + 55}/800/400`} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
-                />
-                <div className="absolute top-4 right-4 z-20">
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide ${
-                    project.category === 'AI' ? 'bg-purple-500/90 text-white' : 'bg-blue-500/90 text-white'
-                  }`}>
-                    {project.category}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-slate-500 text-xs font-mono mb-4">{project.tech}</p>
-                
-                <ul className="space-y-2 mb-6 flex-grow">
-                  {project.points.slice(0, 2).map((point, i) => (
-                    <li key={i} className="text-slate-400 text-sm flex items-start">
-                      <span className="mr-2 text-cyan-500">•</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-auto pt-4 border-t border-slate-800 flex items-center justify-between">
-                  <span className="text-slate-500 text-xs">{project.period}</span>
-                  {project.link && (
-                    <a href={project.link} className="flex items-center text-sm text-white hover:text-cyan-400 transition-colors">
-                      Details <ExternalLink className="ml-1 h-3 w-3" />
-                    </a>
-                  )}
-                </div>
-              </div>
+    <div>
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+          Pinned Spaces
+          <span className="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full font-normal">{PROJECTS.length}</span>
+        </h2>
+        <div className="text-sm text-blue-600 hover:underline cursor-pointer">View all</div>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        {PROJECTS.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} />
+        ))}
+        
+        {/* Add a placeholder card for "New Project" style */}
+        <div className="border border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-gray-400 hover:border-gray-400 hover:bg-gray-50 transition-all cursor-pointer h-full min-h-[200px]">
+            <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mb-2">
+                <span className="text-xl">+</span>
             </div>
-          ))}
+            <span className="text-sm font-medium">Create new Space</span>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

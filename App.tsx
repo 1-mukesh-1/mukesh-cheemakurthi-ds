@@ -9,7 +9,7 @@ import GeminiChat from './components/GeminiChat';
 import Footer from './components/Footer';
 
 function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   // Handle Dark Mode Class

@@ -81,7 +81,7 @@ export const PROJECTS: Project[] = [
     period: "Jan 2025 - Apr 2025",
     category: 'Data',
     link: "#",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800", // Warehouse / Logistics / Boxes
+    image: "https://private-user-images.githubusercontent.com/51417684/434831528-fe6a5b9c-9cd8-40f9-bbf0-d40fa47ac37b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjMwMTU2NDUsIm5iZiI6MTc2MzAxNTM0NSwicGF0aCI6Ii81MTQxNzY4NC80MzQ4MzE1MjgtZmU2YTViOWMtOWNkOC00MGY5LWJiZjAtZDQwZmE0N2FjMzdiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTEzVDA2MjkwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZhNjlmZjBmNWZmZWIzMWEzNWNhN2FiOWU3OWY5MDBkZTBjYzkxOWU2YTdlYTY3ZTY3NmJjNDg2ZGYxYzdjMDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XJOKaoVtqusEhGYYm1i8rdAKLfEcWpG9jxR7giSbBSo", // Warehouse / Logistics / Boxes
     points: [
       "Developed evolutionary algorithm to optimize warehouse space layout, reducing storage costs.",
       "Designed fitness function evaluating travel distance, picking time, weight and space utilization metrics.",
@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
     period: "Sep 2024 - Dec 2024",
     category: 'AI',
     link: "#",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800", // Computer Vision / Code / Analysis
+    image: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator/blob/main/all_images/vis/geo/all_transformations.png", // Computer Vision / Code / Analysis
     points: [
       "Built ML pipeline with 89% accuracy using deep learning to automate body measures of mono images.",
       "Incorporated geometric algorithms to improve accuracy from 33% to 80% versus baseline models.",

@@ -4,7 +4,7 @@ export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/mukesh003/",
   github: "https://github.com/1-mukesh-1",
   email: "cheemakurthi.m@northeastern.edu",
-  portfolio: "#",
+  portfolio: "https://mukesh-cheemakurthi-ds.netlify.app",
   phone: "+1 716-418-9488"
 };
 
@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     tech: "Langchain, React, Stateful AI",
     period: "Feb 2025",
     category: 'AI Agents',
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800", // Digital Brain / AI Network
+    image: "https://ibb.co/sdVYS3gy", // Digital Brain / AI Network
     points: [
       "Designed multi-agent AI system managing workflows with 5+ specialized agents including calendar and emails.",
       "Integrated 10+ APIs for effective communication, achieving 100% efficiency gains in daily tasks.",

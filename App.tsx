@@ -102,8 +102,7 @@ function App() {
              <div className="mt-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm">
                 <h3 className="font-bold text-gray-600 dark:text-gray-400 mb-3 uppercase text-xs tracking-wider">About Me</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  Data Scientist & Engineer passionate about AI Agents, Large Language Models, and Data Pipelines. 
-                  Currently optimizing EEG analysis at Northeastern University.
+                  Data Scientist with production experience at Walmart and research experience at Northeastern, skilled in optimizing large-scale data systems and crafting AI solutions. Accomplished in building robust ETL pipelines and optimization. Eager to leverage data engineering expertise to develop efficient data architectures and enhance data processing capabilities.
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
                    <h3 className="font-bold text-gray-600 dark:text-gray-400 mb-3 uppercase text-xs tracking-wider">Education</h3>

@@ -40,10 +40,14 @@ const GeminiChat = () => {
 
     try {
       // Format history for API
-      const history = messages.map(msg => ({
-        role: msg.role,
-        parts: [{ text: msg.text }]
-      }));
+      // IMPORTANT: Filter out the initial welcome message (which is purely UI) 
+      // and any error messages to prevent API errors (API expects User turn first or alternating valid turns)
+      const history = messages
+        .filter((msg, index) => !msg.isError && !(index === 0 && msg.role === 'model'))
+        .map(msg => ({
+          role: msg.role,
+          parts: [{ text: msg.text }]
+        }));
 
       const response = await sendMessageToGemini(history, userMessage.text);
 

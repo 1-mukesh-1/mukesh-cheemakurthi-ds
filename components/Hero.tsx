@@ -28,7 +28,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Mukesh Cheemakurthi</h1>
-            <p className="text-gray-500 dark:text-gray-400 font-medium text-lg">@mukesh003</p>
+            <p className="text-xl text-gray-900 dark:text-white">Data Scientist</p>
           </div>
           <div className="flex items-center gap-2">
             <button 

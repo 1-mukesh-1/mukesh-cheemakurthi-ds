@@ -23,7 +23,7 @@ const Header = ({ theme, toggleTheme, onNavigate, activeSection }: HeaderProps) 
         <div className="flex items-center gap-8">
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('about'); }} className="flex items-center gap-2 group">
             <div className="text-2xl transition-transform group-hover:rotate-12">🤗</div>
-            <span className="font-bold text-lg tracking-tight hidden sm:block text-gray-900 dark:text-white">Hugging Folio</span>
+            <span className="font-bold text-lg tracking-tight hidden sm:block text-gray-900 dark:text-white">Portfolio</span>
           </a>
           
           <nav className="hidden md:flex items-center gap-1">

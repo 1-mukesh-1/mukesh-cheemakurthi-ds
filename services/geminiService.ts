@@ -4,12 +4,23 @@ import { SYSTEM_INSTRUCTION } from "../constants";
 let aiClient: GoogleGenAI | null = null;
 
 export const initializeGenAI = () => {
-  if (!process.env.API_KEY) {
+  let apiKey: string | undefined;
+  
+  try {
+    // Safely attempt to access process.env.API_KEY
+    // This prevents ReferenceError in environments where process is not defined
+    apiKey = process.env.API_KEY;
+  } catch (error) {
+    console.error("Error accessing process.env:", error);
+  }
+
+  if (!apiKey) {
     console.error("API_KEY is missing from environment variables.");
     return null;
   }
+
   if (!aiClient) {
-    aiClient = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    aiClient = new GoogleGenAI({ apiKey });
   }
   return aiClient;
 };

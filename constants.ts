@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     tech: "Langchain, React, Stateful AI",
     period: "Feb 2025",
     category: 'AI Agents',
-    image: "https://ibb.co/sdVYS3gy", // Digital Brain / AI Network
+    image: "https://i.ibb.co/Vcq4yBL2/21768.jpg",
     points: [
       "Designed multi-agent AI system managing workflows with 5+ specialized agents including calendar and emails.",
       "Integrated 10+ APIs for effective communication, achieving 100% efficiency gains in daily tasks.",
@@ -81,7 +81,7 @@ export const PROJECTS: Project[] = [
     period: "Jan 2025 - Apr 2025",
     category: 'Algorithms & AI',
     link: "https://github.com/WarehouseManagementProject/InventoryManagement",
-    image: "https://private-user-images.githubusercontent.com/51417684/434831528-fe6a5b9c-9cd8-40f9-bbf0-d40fa47ac37b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjMwMTU2NDUsIm5iZiI6MTc2MzAxNTM0NSwicGF0aCI6Ii81MTQxNzY4NC80MzQ4MzE1MjgtZmU2YTViOWMtOWNkOC00MGY5LWJiZjAtZDQwZmE0N2FjMzdiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTEzVDA2MjkwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZhNjlmZjBmNWZmZWIzMWEzNWNhN2FiOWU3OWY5MDBkZTBjYzkxOWU2YTdlYTY3ZTY3NmJjNDg2ZGYxYzdjMDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XJOKaoVtqusEhGYYm1i8rdAKLfEcWpG9jxR7giSbBSo", // Warehouse / Logistics / Boxes
+    image: "https://private-user-images.githubusercontent.com/51417684/434831528-fe6a5b9c-9cd8-40f9-bbf0-d40fa47ac37b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjMwMTU2NDUsIm5iZiI6MTc2MzAxNTM0NSwicGF0aCI6Ii81MTQxNzY4NC80MzQ4MzE1MjgtZmU2YTViOWMtOWNkOC00MGY5LWJiZjAtZDQwZmE0N2FjMzdiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTEzVDA2MjkwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZhNjlmZjBmNWZmZWIzMWEzNWNhN2FiOWU3OWY5MDBkZTBjYzkxOWU2YTdlYTY3ZTY3NmJjNDg2ZGYxYzdjMDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XJOKaoVtqusEhGYYm1i8rdAKLfEcWpG9jxR7giSbBSo",
     points: [
       "Developed evolutionary algorithm to optimize warehouse space layout, reducing storage costs.",
       "Designed fitness function evaluating travel distance, picking time, weight and space utilization metrics.",
@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
     period: "Sep 2024 - Dec 2024",
     category: 'Computer Vision',
     link: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator",
-    image: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator/blob/main/all_images/vis/geo/all_transformations.png?raw=true", // Computer Vision / Code / Analysis
+    image: "https://github.com/1-mukesh-1/Tshirt-Size-Estimator/blob/main/all_images/vis/geo/all_transformations.png?raw=true",
     points: [
       "Built ML pipeline with 89% accuracy using deep learning to automate body measures of mono images.",
       "Incorporated geometric algorithms to improve accuracy from 33% to 80% versus baseline models.",

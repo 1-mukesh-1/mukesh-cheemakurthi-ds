@@ -21,8 +21,8 @@ const Hero = () => {
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Mukesh</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-slate-400 mb-8 font-light">
-            Data Scientist & Engineer transforming raw data into <span className="text-slate-200 font-medium">intelligent decisions</span>.
+          <p className="text-xl sm:text-2xl text-slate-400 mb-8 font-light leading-relaxed">
+            Data Scientist with <span className="text-slate-200 font-medium">production experience</span> at Walmart and <span className="text-slate-200 font-medium">research expertise</span> at Northeastern.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">

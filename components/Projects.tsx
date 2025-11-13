@@ -19,11 +19,11 @@ const Projects = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project, index) => (
             <div key={index} className="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-900/20 flex flex-col">
-              {/* Image Placeholder - using generic tech/abstract images */}
+              {/* Image Container */}
               <div className="h-48 w-full overflow-hidden relative">
                 <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-all z-10" />
                 <img 
-                  src={`https://picsum.photos/seed/${index + 55}/800/400`} 
+                  src={project.image || `https://picsum.photos/seed/${index + 55}/800/400`} 
                   alt={project.title}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
                 />

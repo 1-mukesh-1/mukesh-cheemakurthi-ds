@@ -67,6 +67,7 @@ export const PROJECTS: Project[] = [
     tech: "Langchain, React, Stateful AI",
     period: "Feb 2025",
     category: 'AI',
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800", // Digital Brain / AI Network
     points: [
       "Designed multi-agent AI system managing workflows with 5+ specialized agents including calendar and emails.",
       "Integrated 10+ APIs for effective communication, achieving 100% efficiency gains in daily tasks.",
@@ -80,6 +81,7 @@ export const PROJECTS: Project[] = [
     period: "Jan 2025 - Apr 2025",
     category: 'Data',
     link: "#",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800", // Warehouse / Logistics / Boxes
     points: [
       "Developed evolutionary algorithm to optimize warehouse space layout, reducing storage costs.",
       "Designed fitness function evaluating travel distance, picking time, weight and space utilization metrics.",
@@ -92,6 +94,7 @@ export const PROJECTS: Project[] = [
     period: "Sep 2024 - Dec 2024",
     category: 'AI',
     link: "#",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800", // Computer Vision / Code / Analysis
     points: [
       "Built ML pipeline with 89% accuracy using deep learning to automate body measures of mono images.",
       "Incorporated geometric algorithms to improve accuracy from 33% to 80% versus baseline models.",

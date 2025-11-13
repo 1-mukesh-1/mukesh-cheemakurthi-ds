@@ -5,6 +5,7 @@ export interface Project {
   points: string[];
   link?: string;
   category: 'AI' | 'Data' | 'DevOps';
+  image?: string;
 }
 
 export interface Job {

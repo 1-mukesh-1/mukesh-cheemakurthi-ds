@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Link as LinkIcon, Calendar, MoreHorizontal, Github, Mail } from 'lucide-react';
+import { MapPin, Link as LinkIcon, StickyNote, MoreHorizontal, Github, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
 interface HeroProps {
@@ -18,8 +18,9 @@ const Hero = ({ onNavigate }: HeroProps) => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute -bottom-2 -right-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full border-2 border-white dark:border-gray-800 shadow-sm z-10">
-          PRO
+        <div className="absolute -bottom-2 -right-2 bg-red-400 text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white dark:border-gray-800 shadow-sm z-10">
+          Actively
+          Looking for Jobs
         </div>
       </div>
 
@@ -62,8 +63,8 @@ const Hero = ({ onNavigate }: HeroProps) => {
              </a>
           </div>
           <div className="flex items-center gap-1">
-            <Calendar className="w-4 h-4 text-gray-400" />
-            Joined Sept 2024
+            <StickyNote className="w-4 h-4 text-gray-400" />
+            Open to relocation
           </div>
         </div>
       </div>
